@@ -1,3 +1,3 @@
-## TimeCloud
+# TimeCloud
 
-# Project management and time keeping app
+#### Project management and time keeping app
