@@ -8,7 +8,7 @@
         "dev": "./node_modules/nodemon/bin/nodemon.js src/app.js"
     },
     "author": "",
-    "license": "ISC",
+    "license": "MIT",
     "dependencies": {
     "bcrypt": "^2.0.1",
     "dotenv": "^6.0.0",
