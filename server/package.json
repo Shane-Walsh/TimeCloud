@@ -20,5 +20,8 @@
         "nodemailer": "^4.6.7",
         "nodemon": "^1.17.5",
         "package.json": "^2.0.1"
+    },
+    "nodemonConfig": {
+        "ext": "js,json,graphql"
     }
 }
