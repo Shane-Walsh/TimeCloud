@@ -1,3 +1,4 @@
+/* eslint-disable */ 
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
@@ -21,8 +22,8 @@ const router = new Router({
       meta: { title: 'Signup - TimeCloud' }
     },
   ]
-})
-router.afterEach((to, from) => {
+}) // router.afterEach((to, from) => {
+router.afterEach((to) => {
   document.title = to.meta.title
 })
 
