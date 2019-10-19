@@ -15,11 +15,11 @@
                           <el-input v-model="form.email" placeholder="Email"></el-input>
                         </el-form-item>
                         <el-form-item>
-                          <el-button type="primary" >Create my enamel account</el-button>
+                          <el-button type="primary" >Create a TimeCloud account</el-button>
                         </el-form-item>
                       </el-form>
                       <div>
-                        <span>Already have an enamel account?</span>
+                        <span>Already have an TimeCloud account?</span>
                         <router-link :to="{name: 'login'}" class="link">Log in</router-link>
                       </div>
                       <div v-if="submitted">
