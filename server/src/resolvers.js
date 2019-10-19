@@ -2,6 +2,7 @@ const { GraphQLScalarType } = require('graphql')
 const moment = require('moment')
 const { User, Team } = require('./models')
 const JWT_SECRET = process.env.JWT_SECRET
+const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 
 function randomChoice(arr) {
