@@ -32,6 +32,9 @@
 </template>
 
 <script>
+import { CaptureEmail } from '../constants/query.gql'
+import { validateEmail } from '@/helpers/helpers'
+
 export default {
   data() {
     return {
@@ -41,6 +44,31 @@ export default {
         email: '',
       }
     }
+  },
+  methods: {
+    capture() {
+      const {email} = this.form
+      if (!email || !validateEmail(email)) {
+        this.error = 'Please enter a valid email'
+        return
+      }
+      this.$apollo.mutate({
+        mutation: CaptureEmail,
+        variables: {email}
+      }).then(({data}) => {
+        this.submitted = true
+        this.error = false
+        // For development only
+        console.log(data.captureEmail.id)
+      }).catch((error) => {
+        if (error.graphQLErrors.length >= 1) {
+          this.error = error.graphQLErrors[0].message            
+        } else {
+          this.error = 'Something went wrong'
+        }
+        console.log(error)
+      })
+    },
   }
 }
 </script>
