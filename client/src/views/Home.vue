@@ -59,15 +59,16 @@ export default {
         this.submitted = true
         this.error = false
         // For development only
-        console.log(data.captureEmail.id)
+        window.console.log(data.captureEmail.id)
       }).catch((error) => {
         if (error.graphQLErrors.length >= 1) {
           this.error = error.graphQLErrors[0].message            
         } else {
           this.error = 'Something went wrong'
         }
-        console.log(error)
+        window.console.log(error)
       })
+
     },
   }
 }
