@@ -3,6 +3,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Signup from './views/Signup.vue'
+import Login from './views/Login.vue'
 
 Vue.use(Router)
 
@@ -21,6 +22,12 @@ const router = new Router({
       component: Signup,
       meta: { title: 'Signup - TimeCloud' }
     },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login,
+      meta: { title: 'Login - TimeCloud' }
+     }
   ]
 }) // router.afterEach((to, from) => {
 router.afterEach((to) => {
