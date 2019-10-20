@@ -4,6 +4,7 @@ const { User, Team } = require('./models')
 const JWT_SECRET = process.env.JWT_SECRET
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
+const { getUserId } = require('./utils')
 
 function randomChoice(arr) {
   return arr[Math.floor(arr.length * Math.random())]
@@ -16,9 +17,11 @@ const avatarColors = [
 
 const resolvers = {
     Query: {
-     test (_, args, context) {
-      return 'Hello World!'
-       }
+      async getTeam (_, args, context) {
+        const userId = getUserId(context)
+        const user = await User.findById(userId)
+        return await Team.findById(user.team)
+      }
     },
     Mutation: {
         async captureEmail (_, {email}) {
