@@ -1,7 +1,11 @@
 scalar Date
 
 type Query {
-  test: String
+  getTeam: Team
+}
+type Team {
+  id: String
+  name: String
 }
 
 type Mutation {
