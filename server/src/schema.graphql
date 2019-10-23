@@ -2,6 +2,8 @@ scalar Date
 
 type Query {
   getTeam: Team
+  getFolders(parent: String): [Folder]
+  getFolder(id: String!): Folder
 }
 type Team {
   id: String
