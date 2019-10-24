@@ -21,6 +21,26 @@ const workspace = {
   name: 'workspace',
   component: Workspace,
   meta: { title: 'Workspace - enamel', requiresAuth: true },
+  children: [
+    {
+      path: 'folder/:id',
+      component: Folder,
+      props: true,
+      children: [
+        {
+          path: '',
+          name: 'folder',
+          component: FolderDetail
+        },
+        // {
+        //   path: 'task/:taskId',
+        //   name: 'task',
+        //   component: Task,
+        //   props: true
+        // }
+      ]
+    }
+  ]
 }
 
 const router = new Router({
