@@ -93,6 +93,17 @@ const resolvers = {
           const token = jwt.sign({id: user.id, email}, JWT_SECRET)
           return {token, user}
         },
+        async createFolder(_, {parent, name}, context) {
+          const userId = getUserId(context)
+          const folder = await Folder.create({
+            name,
+            parent: parent || undefined,
+            shareWith: parent ? [] : [{
+              kind: 'Team',
+              item: (await User.findById(userId)).team
+            }]
+          })
+          return await Folder.findById(folder.id).populate('shareWith.item')
       },
       Date: new GraphQLScalarType({
         name: 'Date',
