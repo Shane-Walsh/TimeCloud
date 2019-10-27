@@ -8,6 +8,7 @@ import { HttpLink } from 'apollo-link-http'
 import { enableExperimentalFragmentVariables } from 'graphql-tag'
 import VueApollo from 'vue-apollo'
 import ElementUI from 'element-ui'
+import PlusButton from '@/components/icons/PlusButton.vue'
 
 import App from './App.vue'
 import router from './router'
@@ -19,6 +20,7 @@ import './assets/css/style.scss'
 Vue.use(ElementUI)
 
 Vue.config.productionTip = false
+Vue.component('plus-button', PlusButton)
 
 const uri = `${process.env.VUE_APP_URI}/graphql`
 const httpLink = new HttpLink({uri})
