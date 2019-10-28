@@ -44,3 +44,15 @@ type Folder {
   description: String
   shareWith: [JSON]
 }
+
+input FolderInput {
+  name: String
+  parent: String
+  description: String
+  shareWith: [ShareInput]
+}
+
+input ShareInput {
+  kind: String
+  item: String
+}
