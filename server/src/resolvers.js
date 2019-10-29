@@ -121,6 +121,13 @@ const resolvers = {
           { new: true }
         ).populate('shareWith')
       },
+      async deleteFolder(_, {id}, context) {
+        const userId = getUserId(context)
+        await Folder.deleteOne({_id: id})
+        deleteSubfolders(id)
+        return true
+      },
+    },
       Date: new GraphQLScalarType({
         name: 'Date',
         description: 'Date custom scalar type',
