@@ -15,6 +15,14 @@ const avatarColors = [
   "80DEEA","4DD0E1","00ACC1","9FA8DA","7986CB","3949AB","8E24AA","BA68C8","CE93D8"
 ]
 
+async function deleteSubfolders(id) {
+  const folders = await Folder.find({parent: id})
+  for (const folder of folders) {
+   await deleteSubfolders(folder.id)
+   await Folder.deleteOne({_id: folder.id})
+  } 
+}
+
 const resolvers = {
     Query: {
       async getTeam (_, args, context) {
