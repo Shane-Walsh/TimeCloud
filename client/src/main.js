@@ -35,8 +35,6 @@ const cache = new InMemoryCache({
   }
 })
 
-const cache = new InMemoryCache({})
-
 const errorLink = onError(({ graphQLErrors, networkError }) => {
   if (graphQLErrors)
     graphQLErrors.map(({ message, locations, path }) =>
