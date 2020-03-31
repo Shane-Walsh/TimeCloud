@@ -21,7 +21,7 @@
     "graphql": "0.13.2",
     "graphql-tag": "2.9.2",
     "moment": "2.22.2",
-    "next": "9.0.8-canary.4",
+    "next": "9.3.2",
     "vue": "^2.6.10",
     "vue-apollo": "^3.0.0-rc.7",
     "vue-router": "^3.0.6",
